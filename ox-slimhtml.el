@@ -84,7 +84,7 @@ INFO is a plist holding contextual information."
 CONTENTS is the section as defined under the HEADLINE.
 INFO is a plist holding contextual information."
   (let* ((text (org-export-data (org-element-property :title headline) info))
-         (level (org-export-get-relative-level headline info))
+         (level (org-element-property :level headline))
          (attributes (org-element-property :ATTR_HTML headline))
          (container (org-element-property :HTML_CONTAINER headline))
          (container-class (and container (org-element-property :HTML_CONTAINER_CLASS headline))))
