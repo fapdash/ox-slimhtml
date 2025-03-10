@@ -212,7 +212,8 @@ INFO is a plist holding contextual information."
 CONTENTS is nil.  INFO is a plist holding contextual information."
   (let ((code (org-html-format-code example-block info)))
     (when code
-      (format "<pre><code class=\"%s\">%s</code></pre>"
+      (format "<pre class=\"%s\"><code class=\"%s\">%s</code></pre>"
+              "org-src-container"
               (or (org-element-property :language example-block) "example")
               code))))
 
@@ -289,8 +290,8 @@ INFO is a plist holding contextual information."
   (let ((code (org-html-format-code src-block info))
         (language (org-element-property :language src-block)))
     (when code
-      (format "<pre><code class=\"%s\"%s>%s</code></pre>"
-              language (ox-slimhtml--attr src-block) code))))
+      (format "<pre class=\"%s\"><code class=\"%s\"%s>%s</code></pre>"
+              "org-src-block" language (ox-slimhtml--attr src-block) code))))
 
 ;; body
 ;; #+BEGIN_EXAMPLE
